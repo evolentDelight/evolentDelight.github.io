@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dweather</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <div id="title"></div>
+
+    <div id="current"><!--Current Weather Data-->
+        <p id="currTemp">~°C</p>
+        <p id="currDate"></p>
+        <p id="restData"></p>
+    </div>
+
+    <div id="forecast">
+        <div id="f1">
+            <p id="Tempf1">-</p>
+            <p class="dateF" id = "dateF1"></p>
+            <p class="restDataF" id="restf1"></p>
+        </div>
+        <div id="f2">
+            <p id="Tempf2">-</p>
+            <p class="dateF" id = "dateF2"></p>
+            <p class="restDataF" id="restf2"></p>
+        </div>
+        <div id="f3">
+            <p id="Tempf3">-</p>
+            <p class="dateF" id = "dateF3"></p>
+            <p class="restDataF" id="restf3"></p>
+        </div>
+        <div id="f4">
+            <p id="Tempf4">-</p>
+            <p class="dateF" id = "dateF4"></p>
+            <p class="restDataF" id="restf4"></p>
+        </div>
+        <div id="f5">
+            <p id="Tempf5">-</p>
+            <p class="dateF" id = "dateF5"></p>
+            <p class="restDataF" id="restf5"></p>
+        </div>
+    </div>
+
+    <div id="input">
+        Enter City: <br>
+        <input id="inputbox" type="text" placeholder="San Francisco"
+            onkeyup="listen(this.value, event)"/>
+        <br>
+        <span id="inputboxtext"></span>
+
+        <div id="LastUpdated"><!--Displays time when updated-->
+            Last Updated:<br>
+            <span id="update"></span>
+        </div>
+
+    </div>
+
+    <div id="options">
+        Available Options:<br>
+        <span id="DisplayOptions"></span>
+    </div>
+</body>
