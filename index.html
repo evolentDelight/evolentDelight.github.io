@@ -1,139 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben's Personal Site</title>
+    <title>Dweather</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
-    <table cellspacing="20">
-        <tr>
-            <td>
-                <img src="Profile Pic.jpg" alt="Profile Picture" width="250vmax" height="250vmax">
-            </td>
-            <td>
-                <h1>Benjamin Kwon</h1>
-                <p>Aspiring Full Stack Developer</p>
-                <p>Currently a Front End Developer learning the ropes</p>
-            </td>
-        </tr>
-    </table>
+    <div id="title"></div>
 
-    <hr>
+    <div id="current"><!--Current Weather Data-->
+        <p id="currTemp">~°C</p>
+        <p id="currDate"></p>
+        <p id="restData"></p>
+    </div>
 
-    <h3>Projects</h3>
-    <table>
-        <thead>
+    <div id="forecast">
+        <div id="f1">
+            <p id="Tempf1">-</p>
+            <p class="dateF" id = "dateF1"></p>
+            <p class="restDataF" id="restf1"></p>
+        </div>
+        <div id="f2">
+            <p id="Tempf2">-</p>
+            <p class="dateF" id = "dateF2"></p>
+            <p class="restDataF" id="restf2"></p>
+        </div>
+        <div id="f3">
+            <p id="Tempf3">-</p>
+            <p class="dateF" id = "dateF3"></p>
+            <p class="restDataF" id="restf3"></p>
+        </div>
+        <div id="f4">
+            <p id="Tempf4">-</p>
+            <p class="dateF" id = "dateF4"></p>
+            <p class="restDataF" id="restf4"></p>
+        </div>
+        <div id="f5">
+            <p id="Tempf5">-</p>
+            <p class="dateF" id = "dateF5"></p>
+            <p class="restDataF" id="restf5"></p>
+        </div>
+    </div>
 
-        </thead>
-        <tbody>
-            
-        </tbody>
-        <tfoot>
+    <div id="input">
+        Enter City: <br>
+        <input id="inputbox" type="text" placeholder="San Francisco"
+            onkeyup="listen(this.value, event)"/>
+        <br>
+        <span id="inputboxtext"></span>
 
-        </tfoot>
-    </table>
+        <div id="LastUpdated"><!--Displays time when updated-->
+            Last Updated:<br>
+            <span id="update"></span>
+        </div>
 
-    <hr>
+    </div>
 
-    <h3>Relevant Coursework</h3>
-
-    <hr>
-
-    <h3 style="margin-bottom: 0; padding-bottom: 0;">Skills</h3>
-    <table >
-        <tr>
-            <td>
-                <table cellspacing="10">
-                    <tbody>
-                        <tr>
-                            <td>Javascript</td>
-                            <td>👍👍👍👍</td>
-                        </tr>
-                        <tr>
-                            <td>HTML</td>
-                            <td>👍👍👍👍</td>
-                        </tr>
-                        <tr>
-                            <td>CSS</td>
-                            <td>👍👍</td>
-                        </tr>
-                        <tr>
-                            <td>OOP</td>
-                            <td>👍👍👍👍👍</td>
-                        </tr>
-                    </tbody>
-                </table>
-            <td>
-            <td>
-                <table cellspacing="10">
-                    <tbody>
-                        <tr>
-                            <td>SQL</td>
-                            <td>👍👍👍👍👍</td>
-                        </tr>
-                        <tr>
-                            <td>JSON</td>
-                            <td>👍👍👍👍👍</td>
-                        </tr>
-                        <tr>
-                            <td>C++</td>
-                            <td>👍👍👍👍</td>
-                        </tr>
-                        <tr>
-                            <td>Java</td>
-                            <td>👍👍👍👍</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-    </table>
-
-    <hr>
-
-    <h3>Work Experience</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Dates</th>
-                <th>Work</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>2019-2020</td>
-                <td>General Merchandise Expert at Target</td>
-            </tr>
-            <tr>
-                <td>2019</td>
-                <td>Clerk at CVS Pharmacy(Retail)</td>
-            </tr>
-        </tbody>
-        <tfoot></tfoot>
-    </table>
-
-    <hr>
-
-    <footer>
-        <h2>Contacts</h2>
-        <p>evolentDelight@outlook.com</p>
-        <p>925-628-3858</p>
-
-        <form action="mailto:info@evolentDelight@outlook.com" method="post" enctype="text/plain">
-            <label for="name">Your Name:</label>
-            <input name="Name" type="text">
-            <br>
-            <label for="email">Your Email:</label>
-            <input type="email" name="Email" id="">
-            <br>
-            <label for="message">Your Message: </label>
-            <br>
-            <textarea name="Message" cols="33" rows="10"></textarea>
-            <br>
-            <input type="submit">
-        </form>
-    </footer>
-
+    <div id="options">
+        Available Options:<br>
+        <span id="DisplayOptions"></span>
+    </div>
 </body>
-</html>
