@@ -15,12 +15,6 @@ function DisplayOptions(json){
 
 }
 
-async function options(city){
-    await fetch('https://www.metaweather.com/api/location/search/?query=' + String(city))
-        .then((response) => response.json())
-        .then((json) => DisplayOptions(json));
-}
-
 function forecast(json){
     for(var i = 1; i < 6; i++){
         var date = new Date();
@@ -86,12 +80,18 @@ function current(json){
 
 }
 
+async function options(city){
+    await fetch('/search?location=' + String(city))
+        .then((response) => response.json())
+        .then((json) => DisplayOptions(json));
+}
+
 async function getWeather(city){
     document.getElementById("inputboxtext").innerHTML = "";
 
     var jsonObj;
 
-    await fetch('https://www.metaweather.com/api/location/search/?query=' + String(city))
+    await fetch('/search?location=' + String(city))
         .then((response) => response.json())
         .then((json) => jsonObj = json);
 
@@ -99,7 +99,7 @@ async function getWeather(city){
         document.getElementById("inputboxtext").innerHTML = "Please Enter A Valid City";
     }
     else{
-        await fetch('https://www.metaweather.com/api/location/' + String(jsonObj[0].woeid))
+        await fetch('/info?id=' + String(jsonObj[0].woeid))
             .then((response) => response.json())
             .then((function(json){
                 document.getElementById("title").innerHTML = json.title + ", " + json.parent.title;
