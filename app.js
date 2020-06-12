@@ -6,13 +6,6 @@ const fetch = require('node-fetch')
 
 app.use(express.static('files'))
 
-//Template
-// app.get('/test', async (req, res) =>
-//   await fetch('https://www.metaweather.com/api/location/search/?query=' + 'San Francisco')
-//     .then((response) => response.json())
-//     .then((json) => {res.send(json); console.log(json)})
-// )
-
 app.get('/search', async (req, res) =>
   {
     await fetch(`https://www.metaweather.com/api/location/search/?query=${req.query.location}`)
